@@ -29,6 +29,6 @@ jobs:
       shell: bash
       
     - name: Show haspermission   
-      run: echo ${{ inputs }}
+      run: echo ${{ inputs.data-clean-method }}
       shell: bash
 
