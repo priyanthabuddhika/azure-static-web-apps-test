@@ -2,7 +2,7 @@
 name: workflow test
 
 env:
-  hasPermission: ${{ contains(fromJSON('["priyanthabuddhika","herath"]'), github.actor) }}
+  hasPermission: ${{ contains(fromJSON('["atert","herath"]'), github.actor) }}
   
 on:
   workflow_dispatch:
