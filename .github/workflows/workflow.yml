@@ -4,6 +4,8 @@ name: workflow test
 on:
   workflow_dispatch
   
+env:
+  has-permission : contains('["priyanthabuddhika","herath"]', github.actor)
   
 jobs:
   test:
@@ -13,5 +15,9 @@ jobs:
       env: 
         GITHUB_CONTEXT: ${{ toJson(github) }}   
       run: echo "$GITHUB_CONTEXT"
+      shell: bash
+      
+    - name: Show haspermission   
+      run: echo ${{ env.permission }}
       shell: bash
 
