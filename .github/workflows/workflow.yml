@@ -1,6 +1,9 @@
 
 name: workflow test
 
+env:
+  hasPermission: contains(fromJSON('["priyanthabuddhika","herath"]'), github.actor)
+  
 on:
   workflow_dispatch:
     inputs:
@@ -29,6 +32,6 @@ jobs:
       shell: bash
       
     - name: Show haspermission   
-      run: echo ${{ inputs.data-clean-method }}
+      run: echo ${{ env.hasPermission }}
       shell: bash
 
