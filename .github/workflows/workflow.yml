@@ -2,7 +2,19 @@
 name: workflow test
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+    inputs:
+      data-clean-method:
+        description: "Clean method"
+        required: true
+        default: "all-without-users"
+        type: choice
+        options:
+          - all-without-users
+          - spaces
+          - space-clusters
+          - devices
+          - delete-all-data
 
   
 jobs:
