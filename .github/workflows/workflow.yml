@@ -29,6 +29,6 @@ jobs:
       shell: bash
       
     - name: Show haspermission   
-      run: echo ${{ env.permission }}
+      run: echo ${{ inputs }}
       shell: bash
 
