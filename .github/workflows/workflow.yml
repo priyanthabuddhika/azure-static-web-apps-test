@@ -24,7 +24,7 @@ jobs:
     - name: Show GitHub context   
       env: 
         GITHUB_CONTEXT: ${{ toJson(github) }}   
-      if: contains('["priyanthabuddhika","herath"]', github.actor)
+      if: ${{ inputs.data-clean-method == 'all-without-users' }} && contains('["priyanthabuddhika","herath"]', github.actor)
       run: echo "$GITHUB_CONTEXT"
       shell: bash
       
